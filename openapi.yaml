@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: Rails with OpenAPI
+  version: 0.0.1
+servers:
+  - url: http://localhost:3001
+paths:
+  /api/mismatch/fruits:
+    get:
+      summary: OpenAPIスキーマとレスポンスが乖離しているAPI
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tags:
+                    type: array
+                    items:
+                      type: string
+                      enum:
+                        - 市内
+                        - 県内
+                  shop:
+                    type: string
+                    enum:
+                      - スーパー
+                      - 産直所
+                  fruits:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          enum:
+                            - りんご
+                            - みかん
