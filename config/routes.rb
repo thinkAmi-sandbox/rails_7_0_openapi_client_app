@@ -5,7 +5,13 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :mismatch do
-      resources :fruits, only: [:index]
+      namespace :error do
+        resources :fruits, only: [:index]
+      end
+
+      namespace :workaround do
+        resources :fruits, only: [:index]
+      end
     end
   end
 end

@@ -4,4 +4,4 @@ services:
     image: openapitools/openapi-generator-cli:v6.0.0
     volumes:
       - ./:/local
-    command: generate -i local/openapi.yaml -g ruby -o local/app/lib/openapi
+    command: generate -i local/openapi.yaml -g ruby -o local/openapi
